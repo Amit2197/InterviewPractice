@@ -43,5 +43,29 @@ Udacity Interview Practice
      app.run()
    ```
    
-&#9758;
-6. <b>If you were to start your full-stack developer position today, what would be your goals a year from now?</b>
+    &#9758; 
+    ```python
+       from flask import Flask,jsonify
+       app = Flask(__name__)
+    
+       import json
+       import random
+       
+       @app.route('/roll_dice.json')
+       def roll_dice:
+         """return json result of two dice rolls"""
+         dice = [random.choice(range(1, 7)), random.choice(range(1, 7))]
+         return jsonify(dice=dice)
+    
+       @app.route('/')
+       def hello_world():
+         return 'Hello World!'
+    
+       if __name__ == '__main__':
+         app.debug = True
+         app.run()
+    ```
+    When a user entered roll_dice.json in end of localhost:5000/ then it return the result in json, and each time when refresh the browser its give randomly data from 1 to 6.
+    
+6. <b>If you were to start your full-stack developer position today, what would be your goals a year from now?</b>  
+    &#9758; If I started full stack developer position today, then one years from now, i've more knowledge and more experience in web developer(since i'm web developer). then i want to share my experience with team members, and working on new frameworks, api like knockoutjs, Angularjs etc.
